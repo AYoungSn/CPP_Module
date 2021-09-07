@@ -16,13 +16,18 @@ int main(int argc, char *argv[])
 	std::string str;
 	std::string rep(argv[1]);
 	std::ofstream out(rep + ".replace");
+	if (s1 == s2)
+	{
+		while (getline(in, str))
+			out << str << "\n";
+	}
 	while (getline(in, str))
 	{
 		unsigned long pos = str.find(s1);
 		while (pos != (unsigned long)std::string::npos)
 		{
 			str.replace(pos, s1.length(), s2);
-			pos = str.find(s1);
+			pos = str.find(s1, pos + s2.length());
 		}
 		out << str << "\n";
 	}
