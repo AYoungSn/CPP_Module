@@ -1,7 +1,7 @@
 CXX = clang++
 CXXFLAGS = -Wall -Werror -Wextra
-NAME = a.out
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+NAME = replace
+SRCS = main.cpp 
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
