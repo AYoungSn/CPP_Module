@@ -38,6 +38,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &s)
 	this->attackDamge = s.attackDamge;
 	this->energyPoint = s.energyPoint;
 	this->hitPoint = s.hitPoint;
+	printStatus();
 	return (*this);
 }
 
