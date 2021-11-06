@@ -31,7 +31,7 @@ FragTrap::FragTrap(const FragTrap &frag)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap <"<< this->name << "> Destructor\n";
+	std::cout << "FragTrap Destructor\n";
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &frag)

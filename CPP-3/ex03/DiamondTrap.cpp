@@ -1,7 +1,7 @@
 #include "DiamondTrap.hpp"
 #include "ClapTrap.hpp"
 
-DiamondTrap::DiamondTrap():ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap():ClapTrap(), ScavTrap(), FragTrap()
 {
 	std::cout << "DiamondTrap Default Constructor called\n";
 	this->name = "No name";
@@ -13,6 +13,7 @@ DiamondTrap::DiamondTrap():ScavTrap(), FragTrap()
 }
 
 DiamondTrap::DiamondTrap(std::string name)
+:ClapTrap(name), ScavTrap(name), FragTrap(name)
 {
 	std::cout << "DiamondTrap <" << name << "> Constructor\n";
 	this->name = name;
