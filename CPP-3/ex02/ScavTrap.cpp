@@ -22,6 +22,7 @@ ScavTrap::ScavTrap(const std::string name)
 
 ScavTrap::ScavTrap(const ScavTrap &scav)
 {
+	std::cout << "ScavTrap copy constructor\n";
 	operator=(scav);
 }
 
@@ -32,10 +33,12 @@ ScavTrap::~ScavTrap()
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &s)
 {
+	std::cout << "ScavTrap assignation operator overload\n";
 	this->name = s.name;
 	this->attackDamge = s.attackDamge;
 	this->energyPoint = s.energyPoint;
 	this->hitPoint = s.hitPoint;
+	printStatus();
 	return (*this);
 }
 

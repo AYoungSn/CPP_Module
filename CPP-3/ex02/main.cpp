@@ -1,12 +1,10 @@
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ScavTrap yoahn("yoahn");
-
-	yoahn.attack("mocha");
-	yoahn.takeDamage(10);
-	yoahn.beRepaired(10);
+	FragTrap yoahn("yoahn");
+	yoahn.highFivesGuys();
 
 	return 0;
 }

@@ -22,6 +22,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap &clap)
 {
+	std::cout << "ClapTrap copy constructor\n";
 	operator=(clap);
 }
 
@@ -32,6 +33,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &clap)
 {
+	std::cout << "ClapTrap assignation operator overload\n";
 	this->name = clap.name;
 	this->hitPoint = clap.hitPoint;
 	this->energyPoint = clap.energyPoint;
