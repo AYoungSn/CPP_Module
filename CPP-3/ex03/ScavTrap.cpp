@@ -43,8 +43,10 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &s)
 
 void ScavTrap::attack(std::string const &target)
 {
-	if (energyPoint > 0) {
+	if (energyPoint >= 10) {
 		energyPoint -= 10;
+	} else if (energyPoint < 10) {
+		energyPoint = 0;
 	}
 	std::cout << "<" << name << "> attacks " << target << ", causing "
 	<< attackDamge << " points of damage!\n";
