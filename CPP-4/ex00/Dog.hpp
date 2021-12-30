@@ -11,7 +11,7 @@ class Dog : public Animal{
 	~Dog();
 	Dog &operator=(const Dog &d);
 
-	void makeSound() const;
+	virtual void makeSound() const;
 };
 
 #endif
