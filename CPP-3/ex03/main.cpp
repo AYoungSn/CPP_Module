@@ -8,4 +8,8 @@ int main()
 	dia.guardGate();
 	dia.highFivesGuys();
 	dia.whoAmI();
+
+	ClapTrap *cla = new DiamondTrap("cla");
+	cla->attack("kim");
+	delete cla;
 }
