@@ -1,7 +1,8 @@
 CXX = clang++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = a.out
-SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp \
+	Cure.cpp Ice.cpp MateriaSource.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
