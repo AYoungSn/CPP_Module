@@ -11,7 +11,8 @@ Brain::Brain()
 		"🐙",
 		"🐤",
 		"🐯",
-		"🐳"
+		"🐳",
+		"🌈"
 	};
 	std::cout << "Brain Constructor\n";
 	for (int i = 0;i < 100;i++)

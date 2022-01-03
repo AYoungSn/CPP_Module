@@ -9,7 +9,7 @@ class WrongCat : public WrongAnimal{
 	WrongCat();
 	WrongCat(const std::string type);
 	WrongCat(const WrongCat &a);
-	virtual ~WrongCat();
+	~WrongCat();
 	WrongCat &operator=(const WrongCat &a);
 	void makeSound() const;
 };

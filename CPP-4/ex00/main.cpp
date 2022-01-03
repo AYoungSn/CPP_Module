@@ -19,13 +19,14 @@ int main()
 	delete meta;
 	delete j;
 	delete i;
-	// const WrongAnimal* meta = new WrongAnimal();
-	// const WrongAnimal* i = new WrongCat();
+	std::cout << "=== Wrong Animal ===\n";
+	const WrongAnimal* wmeta = new WrongAnimal();
+	const WrongAnimal* wi = new WrongCat();
 
-	// std::cout << i->getType() << "\n";
-	// i->makeSound();
-	// meta->makeSound();
+	std::cout << wi->getType() << "\n";
+	wi->makeSound();
+	wmeta->makeSound();
 
-	// delete meta;
-	// delete i;
+	delete wmeta;
+	delete wi;
 }
