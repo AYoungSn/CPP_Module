@@ -30,7 +30,7 @@ Cat &Cat::operator=(Cat const &c)
 
 void Cat::makeSound() const
 {
-	std::cout << "Myaaaa 🐈`\n";
+	std::cout << "Myaaaa 🐈\n";
 }
 
 Brain *Cat::getBrain(void) const {

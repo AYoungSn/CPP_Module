@@ -8,6 +8,12 @@ int main()
 	const Animal* i = new Cat();
 	// const Animal a();
 
+	std::cout << j->getType() << "\n";
+	std::cout << i->getType() << "\n";
+
+	i->makeSound();
+	j->makeSound();
+	
 	delete j;
 	delete i;
 	system("leaks a.out");
