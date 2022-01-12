@@ -42,6 +42,18 @@ void Bureaucrat::increaseGrade() {
 	} else
 		this->grade -= 1;
 }
+
+void Bureaucrat::executeForm(Form const & form) {
+	try {
+		form.execute(*this);
+		std::cout << this->name << " executes " << form.getName() << ".\n";
+	} catch(std::string & e) {
+		std::cout << this->name << " cannot execute " << form.getName();
+		std::cout << " because " << e << "\n";
+	}
+	
+}
+
 void Bureaucrat::decreaseGrade() {
 	if (this->grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();

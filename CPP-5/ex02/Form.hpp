@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include <string>
 
 class Bureaucrat;
 
@@ -12,18 +13,21 @@ private:
 	bool is_signed;
 	int signGrade;
 	int exec_grade;
+	std::string target;
+	virtual void beExecuted() const;
 public:
-	Form(const std::string &name, int signGrade, int exec_grade);
+	Form(const std::string &name, int signGrade, int exec_grade, std::string const &target);
 	Form(const Form&);
 	virtual ~Form();
 	Form& operator=(const Form& src);
 	const std::string &getName() const;
-	bool getIsSigned()const;
+	bool getIsSigned() const;
 	int getSignGrade() const;
-	int getExecGrade()const;
+	int getExecGrade() const;
+	const std::string & getTarget() const;
 
 	void beSigned(Bureaucrat &Bureaucrat);
-	void execute(Bureaucrat const & executor) const;
+	virtual void execute(Bureaucrat const & executor) const;
 
 	class GradeTooHighException : public std::exception{
 		public:

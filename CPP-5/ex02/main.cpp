@@ -1,46 +1,42 @@
-#include "Form.hpp"
+# include "ShrubberyCreationForm.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "PresidentialPardonForm.hpp"
+# include "Bureaucrat.hpp"
+
+static void testForm(Bureaucrat* bur, Form* form)
+{
+    std::cout << std::endl << "Sign & Execute \033[33m" << form->getName() << "\033[0m : " << std::endl;
+    bur->signForm(*form);
+    bur->executeForm(*form);
+}
 
 int main()
 {
-	Form *test = new Form("test", 10, 10);
-	Form *toHigh;
-	Form *toLow;
+    ShrubberyCreationForm* shrub = new ShrubberyCreationForm("Patrick");
+    RobotomyRequestForm* robot = new RobotomyRequestForm("Bob");
+    PresidentialPardonForm* pardon = new PresidentialPardonForm("Pef");
 
-	std::cout << *test;
+    Bureaucrat* bob = new Bureaucrat("Bob", 120);
+    Bureaucrat* james = new Bureaucrat("James", 33);
+    Bureaucrat* meg = new Bureaucrat("Meg", 1);
 
-	try {
-		toHigh = new Form("ToHigh", 0, 20);
-	} catch(std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
+    std::cout << "\033[31mNormal\033[0m tests : " << std::endl;
 
-	try
-    {
-       toLow = new Form("ToHigh", 10, 199);
-    }
-    catch(std::exception & e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
+    testForm(bob, shrub);
+    testForm(james, robot);
+    testForm(meg, pardon);
 
-	Bureaucrat* bob = new Bureaucrat("Bob", 5);
-    
-    std::cout << *bob;
+    std::cout << std::endl << "\033[31mAlreadySigned & ToLow\033[0m tests : " << std::endl;
 
-    bob->signForm(*test);
+    testForm(bob, pardon);
 
-    std::cout << *test;
+    delete shrub;
+    delete robot;
+    delete pardon;
 
-    bob->signForm(*test);
+    delete bob;
+    delete james;
+    delete meg;
 
-    Form* nop = new Form("test", 1, 1);
-    Bureaucrat* nopper = new Bureaucrat("Nopper", 12);
-
-    nopper->signForm(*nop);
-
-	delete test;
-	delete bob;
-	delete nop;
-	delete nopper;
-	return 0;
+    return (0);
 }

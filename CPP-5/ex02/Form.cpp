@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(const std::string &name, int signGrade, int exec_grade) {
+Form::Form(const std::string &name, int signGrade, int exec_grade, std::string const & target) {
 	if (signGrade <= 0 || exec_grade <= 0)
 		throw Form::GradeTooHighException();
 	else if (signGrade > 150 || exec_grade > 150)
@@ -9,6 +9,7 @@ Form::Form(const std::string &name, int signGrade, int exec_grade) {
 	this->signGrade = signGrade;
 	this->exec_grade = exec_grade;
 	this->is_signed = false;
+	this->target = target;
 }
 
 Form::Form(const Form& copy){
@@ -20,9 +21,11 @@ Form::Form(const Form& copy){
 	this->is_signed = copy.getIsSigned();
 	this->signGrade = copy.getSignGrade();
 	this->exec_grade = copy.getExecGrade();
+	this->target = copy.getTarget();
 }
 
-Form::~Form() {}
+Form::~Form() {
+}
 
 Form& Form::operator=(const Form& copy) {
 	if (copy.getSignGrade() <= 0 || copy.getExecGrade() <=0)
@@ -33,6 +36,7 @@ Form& Form::operator=(const Form& copy) {
 	this->is_signed = copy.getIsSigned();
 	this->signGrade = copy.getSignGrade();
 	this->exec_grade = copy.getExecGrade();
+	this->target = copy.getTarget();
 	return *this;
 }
 
@@ -59,12 +63,18 @@ void Form::beSigned(Bureaucrat &Bureaucrat) {
 		throw Form::GradeTooLowException();
 }
 
+const std::string & Form::getTarget() const {
+	return this->target;
+}
+
+void Form::beExecuted() const {}
+
 void Form::execute(Bureaucrat const &executor) const {
 	if (!this->is_signed)
 		throw std::string("the form is not signed.");
 	else if (executor.getGrade() > this->exec_grade)
 		throw std::string("grade is too low.");
-	
+	this->beExecuted();
 }
 
 std::ostream &operator<<(std::ostream &out, const Form& form) {
