@@ -9,19 +9,19 @@ int main() {
 	i1 = 10;
 	i2 = 20;
 	std::cout << "before " << i1 << ", " << i2 << "\n";
-	swap(i1, i2);
+	::swap(i1, i2);
 	std::cout << "after " << i1 << ", " << i2 << "\n";
 
 	d1 = 5.15;
 	d2 = 45.334;
 	std::cout << "before " << d1 << ", " << d2 << "\n";
-	swap(d1, d2);
+	::swap(d1, d2);
 	std::cout << "after " << d1 << ", " << d2 << "\n";
 
 	c1 = 'v';
 	c2 = 'a';
 	std::cout << "before " << c1 << ", " << c2 << "\n";
-	swap(c1, c2);
+	::swap(c1, c2);
 	std::cout << "after " << c1 << ", " << c2 << "\n";
 
 	std::cout << "\n=== min test===\n";
