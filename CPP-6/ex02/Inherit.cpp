@@ -1,13 +1,12 @@
 #include "Inherit.hpp"
 
 Base * generate(void) {
-	srand(time(0));
 	int r = rand() % 3;
 
 	if (r == 0) {
-		return new B();
-	} else if (r == 1)
 		return new A();
+	} else if (r == 1)
+		return new B();
 	else
 		return new C();
 }

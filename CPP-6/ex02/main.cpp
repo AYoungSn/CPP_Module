@@ -1,6 +1,7 @@
 #include "Inherit.hpp"
 
 int main() {
+	srand(time(0));
 	A a;
 	B b;
 	C c;
