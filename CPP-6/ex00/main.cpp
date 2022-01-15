@@ -3,8 +3,7 @@
 int main(int argc, char **argv) {
 	std::string argu;
 	float val;
-	float t = std::stof("inff");
-	std::cout << t << "\n";
+
 	if (argc == 2) {
 		argu = argv[1];
 		ScalarConversion conv;
@@ -26,7 +25,7 @@ int main(int argc, char **argv) {
 		} catch(std::string &e) {
 			std::cout << e << "\n";
 		}
-		if (val - (val) != (float)0) {
+		if (val - (int)(val) != (float)0) {
 			std::cout << "float: " << conv.toFloat(val) << "f\n";
 		} else {
 			std::cout << "float: " << conv.toFloat(val) << ".0f\n";

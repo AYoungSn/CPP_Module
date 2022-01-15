@@ -19,9 +19,11 @@ float ScalarConversion::toLiteral(std::string const &val) {
 	float value;
 
 	try {
+		std::cout << "size: " << ft_strlen(val) << "\n";
 		if (ft_strlen(val) == 3 
 			&& val[0] == '\''
 			&& val[2] == '\'') {
+			std::cout << "val: " << val[1] << "\n";
 			return static_cast<float>(val[1]);
 		}
 		value = std::stof(val);
