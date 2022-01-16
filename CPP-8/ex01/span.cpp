@@ -49,8 +49,6 @@ long Span::longestSpan(void) const {
 	min = std::min_element(num.begin(), num.end());
 	max = std::max_element(num.begin(), num.end());
 
-	std::cout << "min: " << *min << "\n";
-	std::cout << "max: " << *max << "\n";
 	return ((long)*max - (long)*min);
 }
 

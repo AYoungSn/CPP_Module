@@ -18,13 +18,12 @@ public:
 	void addNumber(int n);
 
 	template<typename Iterator>
-void addNumber(Iterator begin, Iterator end) {
-	if (end - begin > this->N)
-		throw Span::FullException();
-	num.insert(num.end(), begin, end);
-	// num.push_back();
-	std::sort(this->num.begin(), this->num.end());
-}
+	void addNumber(Iterator begin, Iterator end) {
+		if (end - begin > this->N)
+			throw Span::FullException();
+		num.insert(num.end(), begin, end);
+		std::sort(this->num.begin(), this->num.end());
+	}
 
 	long shortestSpan(void) const;
 	long longestSpan(void) const;
